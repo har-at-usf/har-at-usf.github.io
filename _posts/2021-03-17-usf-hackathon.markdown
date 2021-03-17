@@ -5,7 +5,7 @@ date: 2021-03-13 12:00:00 -0400
 categories: usf hackathon 
 ---
 
-Led the backend development for the app, [Follow Fido](https://devpost.com/software/follow-fido) (See the Github project [here](https://github.com/andrewscfl/follow-fido)). We had 24 hours to plan, develop, test, and deploy this app. We met this deadline with most components (except the database "delete schedule event") working.
+Led the backend development for the app, [Follow Fido](https://devpost.com/software/follow-fido). (See the Github project [here](https://github.com/andrewscfl/follow-fido).) We had 24 hours to plan, develop, test, and deploy this app. We met this deadline with most components (except the database "delete schedule event") working.
 
 We all agreed on a Python-based backend: Flask as the webserver, and firebase to store all data. The frontend can easily interact with the database by simply navigating to the preset route, and sending the request data, which could be easily parsed into a dict for further editing. I planned this into a structure of three parts:
 
