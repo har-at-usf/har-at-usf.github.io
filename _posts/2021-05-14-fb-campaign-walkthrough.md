@@ -18,13 +18,7 @@ Ever wanted to know what happens when you *do* interact with one of
 these fakes? This post will walk you through a fake profile, its
 suspicious links, and problems that occur along the way. The analysis
 will trace the behaviors (the "campaign") which starts with a fake
-profile. This is just "one way" to prove that a profile is a fake.
-
-Because the profile sports sexually explicit content of a model, the
-page has over *one-thousand followers* despite it being completely fake.
-At nearly every step of the campaign, the attacker will gain information
-about their victim. Their goal is to get the user to willingly give away
-their own information.
+profile. This provides a blueprint if you ever want to prove that a profile is a fake.
 
 By the end of this, you should have some idea of how to trace a fake
 profile. Note that you should *seldom* (if ever) need to do this on your
