@@ -133,11 +133,11 @@ women.
 If this were a public persona (for example, a celebrity or a well-known
 pornographic actress), it might make sense why. A public person's photos
 are readily available. However, these photographs show up neither in a
-reverse-image Tineye or Google Image search. (The reader can find this
-account and try it themselves.) This means that the actress is either
+reverse-image Tineye or Google Image search. This means that the actress is either
 directly involved in the operation, or has no idea that her photographs
-have been compromised. The important takeaway is that "no image results"
-on a reverse-search engine does *not* mean this account is authentic.
+have been compromised. 
+
+In any case, the big takeaway is that "no reverse-image results," and "multiple photos of the same person," does not necessarily mean a profile is authentic.
 
 ## Malicious links
 
