@@ -40,7 +40,7 @@ My setup is a Virtual Machine running a lightweight, security-mindful
 distro. It is a throwaway environment and will be deleted after this
 demo.
 
-![](./media/2021-05-14/test-setup.PNG)
+![](/assets/2021-05-14/test-setup.PNG)
 
 *Author's note: This guide shows the domain names for several websites.
 Please do not follow those directly. I cannot guarantee that they will
@@ -124,7 +124,7 @@ Fake profiles show up in Facebook's "People you may know" feed all the
 time. This happens when a friend "likes" or "friend-requests" such a
 page. This one is recent, and the inspiration for writing this post:
 
-![](./media/2021-05-14/dana-profile.PNG)
+![](/assets/2021-05-14/dana-profile.PNG)
 
 Dana has *over one-thousand followers* (1,331 at the time of writing)
 and 2,022 friends. Most of her photographs violate Facebook's own
@@ -137,7 +137,7 @@ One unsettling aside: the same woman appears in each post. Often, fake
 profiles use only one photo, or they use a collection of different
 women.
 
-![](./media/2021-05-14/dana-likes.PNG)
+![](/assets/2021-05-14/dana-likes.PNG)
 
 If this were a public persona (for example, a celebrity or a well-known
 pornographic actress), it might make sense why. A public person's photos
@@ -158,7 +158,7 @@ shortener. This is a common tactic for an attacker to hide a malicious
 link (for example, to a page that contains a virus, or a phishing
 attack).
 
-![](./media/2021-05-14/dana-link-shortened.PNG)
+![](/assets/2021-05-14/dana-link-shortened.PNG)
 
 The other link is for a service called **msto.me**. There isn't much
 information available about this site. This fact, in itself, should give
@@ -170,7 +170,7 @@ right-clicking it and selecting **Inspect** or **Inspect Element**. A
 popup like the one below appears with the link's text and target (`href`
 property):
 
-![](./media/2021-05-14/dana-inspect-msto.PNG)
+![](/assets/2021-05-14/dana-inspect-msto.PNG)
 
 In this case, both links match "what we see." Here's how to prove it.
 
@@ -179,15 +179,15 @@ Facebook encodes the URL in order to use with its "external
 link-handling service." We can view the target URL using any URL
 decoder.
 
-![](./media/2021-05-14/urldecode-vht-encoded.PNG)
+![](/assets/2021-05-14/urldecode-vht-encoded.PNG)
 
 The **v.ht** URL is the value of the **u** variable:
 
-![](./media/2021-05-14/urldecode-vht.PNG)
+![](/assets/2021-05-14/urldecode-vht.PNG)
 
 Likewise, the **msto.me** link:
 
-![](./media/2021-05-14/urldecode-msto.PNG)
+![](/assets/2021-05-14/urldecode-msto.PNG)
 
 The problem is, of course, that the link itself might *lead* to a
 malicious page. On a normal setup, this is where I say, "DON'T CLICK THE
@@ -217,7 +217,7 @@ automatically, even with scripts enabled, and shows only a "loading"
 message in the time it takes to process. The browser does not catch any
 suspicious activity because **v.ht** is just a link-shortening service.
 
-![](./media/2021-05-14/vht-loading.PNG)
+![](/assets/2021-05-14/vht-loading.PNG)
 
 The **msto.me** link is different. As a side note, the NoScript addon
 prevents any content from loading at first. This is a *good thing*. If a
@@ -230,12 +230,12 @@ which are somewhat misleading. The phone/WhatsApp icon seems to give the
 page legitimacy because it is a familiar icon. The page even offers two
 buttons for direct contact with the (fake) user:
 
-![](./media/2021-05-14/msto-landingpage.PNG)
+![](/assets/2021-05-14/msto-landingpage.PNG)
 
 Both buttons' URLS redirect to an external page. They are not real links
 within the **msto.me** website. We can inspect them for more detail:
 
-![](./media/2021-05-14/msto-links-analyzed.PNG)
+![](/assets/2021-05-14/msto-links-analyzed.PNG)
 
 Finally, clicking either button directs to the same target page: another
 "middle page" called **giveladieslove.com**. In order to keep this
@@ -249,7 +249,7 @@ First, the URL with scripts disabled reveals some information:
 specifically, that we arrived on this site through the Facebook campaign
 (`utm_campaign=FB2`).
 
-![](./media/2021-05-14/giveladieslove-msto-has_fb_campaign_utm.PNG)
+![](/assets/2021-05-14/giveladieslove-msto-has_fb_campaign_utm.PNG)
 
 This tells an attacker that their Facebook presence is *working.* So, in
 the future, they are more likely to use Facebook for further exploits.
@@ -257,14 +257,14 @@ the future, they are more likely to use Facebook for further exploits.
 Once we enable scripts, the page fully loads, and the UTM data goes
 away:
 
-![](./media/2021-05-14/giveladieslove-url-changes-with-script-no-utm.PNG)
+![](/assets/2021-05-14/giveladieslove-url-changes-with-script-no-utm.PNG)
 
 The **giveladieslove.com** landing page is explicit and will not be
 shown here. It asks a series of questions, all of which are designed to
 entice a victim through the promise of sexual activities. (Recall that
 this is exactly how Dana gained her followers as well.)
 
-![](./media/2021-05-14/giveladieslove-initquestion.PNG)
+![](/assets/2021-05-14/giveladieslove-initquestion.PNG)
 
 After all questions are clicked, a *final* page loads: **date4you.net**.
 
@@ -277,7 +277,7 @@ campaign. Again, the goal is for the attacker to get your information.
 A form asks for a username, password, and email address in order to
 "register" for the website:
 
-![](./media/2021-05-14/date4u.PNG)
+![](/assets/2021-05-14/date4u.PNG)
 
 From this, the attacker gleans three data points. The **username**,
 **password**, and **email** might be repeated information that a victim
@@ -305,21 +305,21 @@ following example traces the final page, **date4you.net**.
 First, use a tool like `nslookup` or IPVoid to find which IPs are
 associated with each domain.
 
-![](./media/2021-05-14/ipvoid-find-ip.PNG)
+![](/assets/2021-05-14/ipvoid-find-ip.PNG)
 
 This yields the IP for the domain.
 
-![](./media/2021-05-14/ipvoid-ip-found.PNG)
+![](/assets/2021-05-14/ipvoid-ip-found.PNG)
 
 Copy the IP address. Then, go back, and enter it in the "blacklist"
 checker.
 
-![](./media/2021-05-14/ipvoid-blacklist-check.PNG)
+![](/assets/2021-05-14/ipvoid-blacklist-check.PNG)
 
 As shown, the associated IP has already been flagged as associated with
 spam.
 
-![](./media/2021-05-14/ipvoid-blacklist-confirm.PNG)
+![](/assets/2021-05-14/ipvoid-blacklist-confirm.PNG)
 
 # How to avoid this
 
