@@ -191,16 +191,14 @@ Likewise, the **msto.me** link:
 The problem is, of course, that the link itself might *lead* to a
 malicious page. On a normal setup, this is where I say, "DON'T CLICK THE
 LINK!" Since this guide is in a virtual machine, we can follow the link
-without too much fear about the main system suffering. (As a note,
-virtual machines are not necessarily secure for tasks like this. There
-are well-known ways to detect and exploit a VM. This is why the VM will
-be deleted afterward.)
+without too much fear about the main system suffering. 
+
+*(As a note, virtual machines are not necessarily secure for tasks like this. There are well-known ways to detect and exploit a VM. This is why the VM will be deleted afterward.)*
 
 At this point, copy and paste the URLs into a text editor (like
-notepad), log out of Facebook, and clear the browser's cache. This one
-is set to delete all information on close, like a Private/Incognito
-window. This is to ensure that, if the websites have unwanted behaviors,
-they cannot lead in any way to the Facebook account.
+notepad), log out of Facebook, and clear the browser's cache. This browser
+is configured to delete all information when closed. (A Private/Incognito
+window accomplishes the same task.) 
 
 ## "Middle" pages
 
@@ -291,9 +289,11 @@ here. It was right there in the URL's UTM data earlier.
 
 At this point, the attacker assumes that the user wants the promise of
 sexual content enough to enter this information. This guide stops at
-this screen alone. Presumably, the website might also ask for payment
+this screen alone. 
+
+Presumably, the website might also ask for payment
 information. Payment information is not just another data point about
-the user, but is also used to, well, get the victim's money.
+the user. If this were an attack, payment information could be used simply to steal the victim's money.
 
 # Further evidence
 
