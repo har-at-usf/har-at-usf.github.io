@@ -194,12 +194,7 @@ window accomplishes the same task.)
 
 ## "Middle" pages
 
-A malicious link might use a landing page between the link and its
-target. This can sometimes make the page "seem harmless" until it
-finishes loading the target (malicious) page.
-
-Dana uses two such pages, between the two links noted earlier, both of
-which load the same website.
+Dana's URLs direct the victim to two different pages "between" Facebook and the target URL.
 
 The **v.ht** page immediately tries to load the target. It does so
 automatically, even with scripts enabled, and shows only a "loading"
