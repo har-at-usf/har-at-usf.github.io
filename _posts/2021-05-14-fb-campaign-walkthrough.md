@@ -351,3 +351,9 @@ can be traced back to Facebook, to lead users to a registration page. If
 a user fills out this page with real information, the attacker has
 several data points about the victim. They can use this information to
 continue correspondence, or as the beginning of an attack.
+
+# Update from Facebook
+
+At the time of writing, Facebook does not believe Dana violates any Terms of Service.
+
+![](C:\Users\Eric-PC\Documents\usf\portfolio\github\har-at-usf.github.io\assets\2021-05-14\update-shes-ok.PNG)
