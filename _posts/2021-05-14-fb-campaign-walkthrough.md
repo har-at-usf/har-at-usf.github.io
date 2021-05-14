@@ -1,4 +1,9 @@
-# "She's just not into you... or real": Analyzing a Facebook-based cyber campaign
+---
+layout: post
+title: "She's just not into you... or real": Analyzing a Facebook-based cyber campaign
+date: 2021-05-14 19:08:00 -0400
+categories: utm social engineering media facebook 
+---
 
 The phenomenon of "men who interact with fake, sexualized content" on
 the internet very prevalent. [The techniques used in spam are often used
