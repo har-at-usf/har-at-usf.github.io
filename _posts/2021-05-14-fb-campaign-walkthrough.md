@@ -111,16 +111,9 @@ so:
 
 ## Fake profile
 
-The purpose of the a profile (or fake email) is for the attacker to
-appear legitimate and gain either a specific victim or a group of
-victims. Later, the attacker will use this false legitimacy to trick
-their victims into acting against their own interest. In this case, the
-attacker behind the account wants the user to give up their personal
-information.
-
 Fake profiles show up in Facebook's "People you may know" feed all the
 time. This happens when a friend "likes" or "friend-requests" such a
-page. This one is recent, and the inspiration for writing this post:
+page. Consider this one:
 
 ![](/assets/2021-05-14/dana-profile.PNG)
 
