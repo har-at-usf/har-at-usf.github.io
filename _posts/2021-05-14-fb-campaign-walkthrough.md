@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'She's just not into you... or real: Analyzing a Facebook-based cyber campaign'
+title: 'She's just not into you... or real - Analyzing a Facebook-based cyber campaign'
 date: 2021-05-14 19:08:00 -0400
 categories: utm social engineering media facebook 
 ---
