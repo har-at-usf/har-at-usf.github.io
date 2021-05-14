@@ -76,8 +76,7 @@ To perform its initial social engineering, the attacker also uses a
 gallery of provocative pictures from the same model. This should raise
 some concerns for one of two reasons. Either the model is working with
 the spam/scam company. Or, she is completely unaware that her photos are
-being used. (If the person photographed finds this guide, please reach
-out for more information about this fake or this guide.)
+being used.
 
 "Middle pages" are used to hide the eventual target: a spam site, which
 compels users to enter their information. This technique of hiding the
