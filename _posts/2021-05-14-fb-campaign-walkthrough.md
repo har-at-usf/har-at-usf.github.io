@@ -5,33 +5,17 @@ date: 2021-05-14 19:08:00 -0400
 categories: utm social engineering media facebook 
 ---
 
-The phenomenon of "men who interact with fake, sexualized content" on
-the internet very prevalent. [The techniques used in spam are often used
-in
-cyberattacks](https://www.newsweek.com/hackers-use-fake-profiles-attractive-women-facebook-spread-viruses-814293).
-So, this guide will treat this campaign as though it were an actual
-cyberattack. Note that terms like "attacker" refer to the "spammer," and
-"victim" refers to "the user who is talking to a fake." (Do not let the
-user be *you.*)
+The phenomenon of "men who interact with fake, sexualized content" on the internet very prevalent. Most people think of these "fake profiles" as "just spam." [However, the techniques used in spam are often used in cyberattacks as well](https://www.newsweek.com/hackers-use-fake-profiles-attractive-women-facebook-spread-viruses-814293). 
 
-Ever wanted to know what happens when you *do* interact with one of
-these fakes? This post will walk you through a fake profile, its
-suspicious links, and problems that occur along the way. The analysis
-will trace the behaviors (the "campaign") which starts with a fake
-profile. This provides a blueprint if you ever want to prove that a profile is a fake.
+That means, as a rule of thumb, do *not* interact with a fake profile. And do *not click* their suspicious links. 
 
-By the end of this, you should have some idea of how to trace a fake
-profile. Note that you should *seldom* (if ever) need to do this on your
-own device. There are many "red flags" that signify a fake profile. The
-reader is encouraged to learn those and identify them on their own. This
-analysis takes place in a controlled, temporary environment, one
-designed exclusively for purposes like this.
+And telling you what not to do might make you wonder: what happens if you *do* interact? If you *do* follow those links?
 
-Note that this analysis will focus on a "spam" page, not a known
-malicious one (like the one that took down the East Coast gas pipeline).
-Still, do not perform these in an insecure environment or with little
-knowledge of what you are doing. That is a very easy way to fall victim
-to a real attack.
+For your sake, this article will do everything I just said *not* to do.
+
+This walkthrough will follow a fake Facebook profile, its suspicious links, and some problems that occur along the way. The analysis will trace the behaviors (the "campaign") which starts with a fake profile. Following the chain of "untrusted" content to its conclusion, the data obtained from a victim can be used to infiltrate other websites where the victim registered with the same email/username and password.
+
+By the end of this, you should have some idea of how to trace a fake profile. Note that you should *seldom* (if ever) need to do these steps on your own device. There are many "red flags" that signify a fake profile. Learn them and identify them.
 
 # Setup
 
