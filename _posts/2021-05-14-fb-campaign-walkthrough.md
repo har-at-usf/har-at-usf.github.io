@@ -178,30 +178,24 @@ suspicious activity because **v.ht** is just a link-shortening service.
 ![](/assets/2021-05-14/vht-loading.PNG)
 
 The **msto.me** link is different. As a side note, the NoScript addon
-prevents any content from loading at first. This is a *good thing*. If a
-virus or phishing scam relies on links to scripts to exploit a system,
-it will not be able to work. (Blocking scripts does not always block
-malware, though.)
+prevents any content from loading at first. 
 
-With scripts enabled, the page loads. It shows two buttons, both of
-which are somewhat misleading. The phone/WhatsApp icon seems to give the
+(This is a *good thing*. If a virus or phishing scam relies on links to scripts to exploit a system, it will not be able to work. Blocking scripts does not always block malware, but it can prevent scripts from performing unwanted behavior on your system.)
+
+With scripts enabled, the page loads. The phone/WhatsApp icon seems to give the
 page legitimacy because it is a familiar icon. The page even offers two
 buttons for direct contact with the (fake) user:
 
 ![](/assets/2021-05-14/msto-landingpage.PNG)
 
-Both buttons' URLS redirect to an external page. They are not real links
+Both buttons' URLS redirect to an external page. They are not links to pages
 within the **msto.me** website. We can inspect them for more detail:
 
 ![](/assets/2021-05-14/msto-links-analyzed.PNG)
 
-Finally, clicking either button directs to the same target page: another
-"middle page" called **giveladieslove.com**. In order to keep this
-appropriate for all audiences, the full webpage will not be displayed.
-(Also, the author recommends not visiting this site.) Instead, we will
-analyze some behaviors.
-
 ## UTM Campaign
+
+Either URL from Dana's website directs to a page called **giveladieslove.com**. In order to keep this appropriate for all audiences, the full webpage will not be displayed. Instead, we will analyze some behaviors.
 
 First, the URL with scripts disabled reveals some information:
 specifically, that we arrived on this site through the Facebook campaign
@@ -217,6 +211,8 @@ away:
 
 ![](/assets/2021-05-14/giveladieslove-url-changes-with-script-no-utm.PNG)
 
+However, nothing is stopping an attacker from storing that UTM information for use later. In the next section, we will observe how this is useful for targeting a clear, deliberate attack against the victim.
+
 The **giveladieslove.com** landing page is explicit and will not be
 shown here. It asks a series of questions, all of which are designed to
 entice a victim through the promise of sexual activities. (Recall that
@@ -226,7 +222,7 @@ this is exactly how Dana gained her followers as well.)
 
 After all questions are clicked, a *final* page loads: **date4you.net**.
 
-## Data-gathering... by YOU
+## Data-gathering... from you
 
 The final page, **date4you.net**, is also very graphic, and it will not
 be shown. This stage of the campaign is really the whole goal of the
