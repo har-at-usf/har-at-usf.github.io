@@ -243,7 +243,7 @@ If this were an *attack* instead of spam, the attacker could use the
 Facebook.
 
 And, as noted, they knew that the victim used a Facebook link to get
-here. It was right there in the URL's UTM data earlier.
+here. It was right there in the URL's UTM tags. If the two websites are linked in any meaningful way, anyone who manages **date4you** will have this data.
 
 This guide stops at this screen alone. Presumably, the website might also ask for payment
 information. Payment information is not just another data point about
@@ -300,6 +300,7 @@ first place:
     payment information to an untrusted source. Even data that seems
     innocent can be used for an attacker to develop a profile about you.
 -   Use a content-blocker in your browser. Tools like UBlock Origin and NoScript are designed to mitigate your chances of falling victim to a cyberattack. Services like IVPN even block intrusive content (including known spam and malware domains) as a feature of the VPN itself.
+-   Enable two-factor authentication whenever possible. This mitigates the chances that someone with only your password will be able to compromise your account.
 
 # Summary
 
@@ -311,8 +312,12 @@ a user fills out this page with real information, the attacker has
 several data points about the victim. They can use this information to
 continue correspondence, or as the beginning of an attack.
 
-# Update from Facebook
+# Further research
 
-At the time of writing, Facebook does not believe Dana violates any Terms of Service. 
+It is not clear whether the final website is written with malicious intent, or if it is just spam. Further research on profiles like these could explore and verify the intentions behind each component of the campaign. This article validates the untrustworthiness of these pages. Since they are untrustworthy, it observes what can happen if the group managing the websites chooses to act maliciously.
+
+One could also explore Facebook's own trustworthiness as a platform. In the past decade, it has been a hotbed of lawsuits and critiques regarding its willingness to reveal user data, and its relaxed security posture with regards to leaking user data. Some would argue that Facebook itself is a scam site...
+
+And, with that in mind, at the time of writing, Facebook does not believe Dana violates any Terms of Service. 
 
 ![](/assets/2021-05-14/update-shes-ok.PNG)
