@@ -29,12 +29,11 @@ demo.
 
 *Author's note: This guide shows the domain names for several websites.
 Please do not follow those directly. I cannot guarantee that they will
-not mess up your system. I have done this work so you don't have to.*
+not mess up your system. I have done this work so you don't have to. Also, virtual machines are not necessarily secure from cyberattacks. In some cases, this would not be enough to protect the host operating system.*
 
 # Tactics (the goal)
 
-In short, the attacker wants the user to give up their own information.
-They will use a variety of techniques to try and accomplish this.
+In short, the attacker wants the user to give up their own information. They will use a variety of techniques to try and accomplish this.
 
 # Techniques (how they do it)
 
@@ -161,8 +160,6 @@ The problem is, of course, that the link itself might *lead* to a
 malicious page. On a normal setup, this is where I say, "DON'T CLICK THE
 LINK!" Since this guide is in a virtual machine, we can follow the link
 without too much fear about the main system suffering. 
-
-*(As a note, virtual machines are not necessarily secure for tasks like this. There are well-known ways to detect and exploit a VM. This is why the VM will be deleted afterward.)*
 
 At this point, copy and paste the URLs into a text editor (like
 notepad), log out of Facebook, and clear the browser's cache. This browser
