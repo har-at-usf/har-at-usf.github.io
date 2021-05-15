@@ -15,7 +15,10 @@ For your sake, this article will do everything I just said *not* to do.
 
 This walkthrough will follow a fake Facebook profile, its suspicious links, and some problems that occur along the way. The analysis will trace the behaviors (the "campaign") which starts with a fake profile. 
 
-It will also explain how the entire process takes data from the victim. The final webpage asks for a username, email, and password. The UTM data, coupled with this information, can give an attacker the resources needed to infiltrate the victim's own Facebook account.
+The following campaign uses a fake Facebook profile to get followers. It offers links, which
+can be traced back to Facebook, which lead users to a registration page. If
+a user fills out this page with real information, the attacker has
+several data points about the victim. They can use this information to infiltrate the victim's own Facebook account.
 
 By the end of this, you should have some idea of how to trace a fake profile. Note that you should *seldom* (if ever) need to do these steps on your own device. There are many "red flags" that signify a fake profile. Learn them and identify them.
 
@@ -301,16 +304,6 @@ first place:
     innocent can be used for an attacker to develop a profile about you.
 -   Use a content-blocker in your browser. Tools like UBlock Origin and NoScript are designed to mitigate your chances of falling victim to a cyberattack. Services like IVPN even block intrusive content (including known spam and malware domains) as a feature of the VPN itself.
 -   Enable two-factor authentication whenever possible. This mitigates the chances that someone with only your password will be able to compromise your account.
-
-# Summary
-
-A spam campaign wants to get user data and, often, payment information.
-This one started with a fake Facebook profile, one that gained a
-following, and the trust of its followers. It then offers links, which
-can be traced back to Facebook, to lead users to a registration page. If
-a user fills out this page with real information, the attacker has
-several data points about the victim. They can use this information to
-continue correspondence, or as the beginning of an attack.
 
 # Further research
 
