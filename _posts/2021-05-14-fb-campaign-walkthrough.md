@@ -5,7 +5,7 @@ date: 2021-05-14 19:08:00 -0400
 categories: utm social engineering media facebook 
 ---
 
-The phenomenon of "men who interact with fake, sexualized content" on the internet very prevalent. Most people think of these "fake profiles" as "just spam." [However, the techniques used in spam are often used in cyberattacks as well](https://www.newsweek.com/hackers-use-fake-profiles-attractive-women-facebook-spread-viruses-814293). 
+The phenomenon of "men who interact with fake, sexualized content" on the internet is very prevalent. Most people think of these "fake profiles" as "just spam." [However, the techniques used in spam are often used in cyberattacks as well](https://www.newsweek.com/hackers-use-fake-profiles-attractive-women-facebook-spread-viruses-814293). 
 
 That means, as a rule of thumb, do *not* interact with a fake profile. And do *not click* their suspicious links. 
 
@@ -38,45 +38,36 @@ They will use a variety of techniques to try and accomplish this.
 
 # Techniques (how they do it)
 
-This fake profile campaign uses a variety of techniques to get user
-engagement. The most dominant technique used is "[social
-engineering](https://usa.kaspersky.com/resource-center/definitions/what-is-social-engineering)."
-In short, this is getting users to act against their own best interests.
-This campaign specifically uses the [promise of
-sex](https://www.bleepingcomputer.com/news/security/malware-spread-as-nude-extortion-pics-of-friends-girlfriend/)
-to gain a following of users (friends or followers) on Facebook. This
-following will become their pool of victims later on.
+**Social engineering.** This fake profile campaign uses a variety of techniques to get user
+engagement. The most dominant technique used is "[social engineering](https://usa.kaspersky.com/resource-center/definitions/what-is-social-engineering)." In short, this is getting users to act against their own best interests. This campaign specifically uses the [promise of sex](https://www.bleepingcomputer.com/news/security/malware-spread-as-nude-extortion-pics-of-friends-girlfriend/) to gain a following of users (friends or followers) on Facebook. This following will become their pool of victims later on.
 
-The attacker who manages the profile then encourages users to click
+**Data collection.** The attacker who manages the profile then encourages users to click
 links that arrive at a spam website (one that, again, promises sex).
 Once there, users are prompted to provide personal information, like
 their name and email address. Presumably, it would also ask for payment
 information later on. (This walkthrough does not cover this because that
 is a bad idea.) In a cyberattack, this could link to malicious content,
-including a [phishing
-attack](https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams)
-that steals information or downloads
-[malware](https://www.mcafee.com/en-us/antivirus/malware.html).
+including a [phishing attack](https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams) that steals information or downloads [malware](https://www.mcafee.com/en-us/antivirus/malware.html).
 
-To perform its initial social engineering, the attacker also uses a
+**Illusion of authenticity.** To perform its initial social engineering, the attacker also uses a
 gallery of provocative pictures from the same model. This should raise
 some concerns for one of two reasons. Either the model is working with
 the spam/scam company. Or, she is completely unaware that her photos are
 being used.
 
-"Middle pages" are used to hide the eventual target: a spam site, which
+**Link obfuscation.** "Middle pages" are used to hide the eventual target: a spam site, which
 compels users to enter their information. This technique of hiding the
 eventual target is dangerous; if this were malware (virus, Trojan, or
 phishing scam), a user would not be able to know that the target is
 malicious. They would only see, for example, a shortened link.
 
-[UTM data](https://support.google.com/analytics/answer/1033863?hl=en) is
+**UTM Tags.** [UTM data](https://support.google.com/analytics/answer/1033863?hl=en) is
 used later to notify the attacker that the target website was visited
 through a Facebook link. This lets the attacker know that their Facebook
 campaign is working. In the future, they are more likely to use Facebook
 for other exploits.
 
-Finally, the login page attempts to get the victim's personal
+**Suspicious website.** The goal is to get a user to subscribe for a website, which has some very suspicious qualities. It has even been flagged on blacklists. The page attempts to get the victim's personal
 information. A full name and email address will allow the attacker to
 spam their inbox. In addition, nothing will stop the attacker from
 giving away the victim's information to other organizations, websites,
