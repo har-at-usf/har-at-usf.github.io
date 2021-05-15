@@ -170,7 +170,7 @@ window accomplishes the same task.)
 
 Dana's URLs direct the victim to two different pages "between" Facebook and the target URL.
 
-The **v.ht** page immediately tries to load the target. It does so
+The **v.ht** page immediately tries to load the target, **giveladieslove.com**. It does so
 automatically, even with scripts enabled, and shows only a "loading"
 message in the time it takes to process. The browser does not catch any
 suspicious activity because **v.ht** is just a link-shortening service.
@@ -188,10 +188,12 @@ buttons for direct contact with the (fake) user:
 
 ![](/assets/2021-05-14/msto-landingpage.PNG)
 
-Both buttons' URLS redirect to an external page. They are not links to pages
+Both buttons' URLS redirect to an external page, **giveladieslove.com**. They are not links to pages
 within the **msto.me** website. We can inspect them for more detail:
 
 ![](/assets/2021-05-14/msto-links-analyzed.PNG)
+
+To recap, Dana's profile provides two different links. They both lead to different pages. However, both those pages lead to the same page, **giveladieslove.com**.
 
 ## UTM Campaign
 
@@ -213,10 +215,9 @@ away:
 
 However, nothing is stopping an attacker from storing that UTM information for use later. In the next section, we will observe how this is useful for targeting a clear, deliberate attack against the victim.
 
-The **giveladieslove.com** landing page is explicit and will not be
-shown here. It asks a series of questions, all of which are designed to
+The **giveladieslove.com** landing page asks a series of questions, all of which are designed to
 entice a victim through the promise of sexual activities. (Recall that
-this is exactly how Dana gained her followers as well.)
+this is exactly how Dana gained her followers.)
 
 ![](/assets/2021-05-14/giveladieslove-initquestion.PNG)
 
