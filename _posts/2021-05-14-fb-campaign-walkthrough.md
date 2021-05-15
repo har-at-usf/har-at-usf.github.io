@@ -13,7 +13,9 @@ And telling you what not to do might make you wonder: what happens if you *do* i
 
 For your sake, this article will do everything I just said *not* to do.
 
-This walkthrough will follow a fake Facebook profile, its suspicious links, and some problems that occur along the way. The analysis will trace the behaviors (the "campaign") which starts with a fake profile. The data obtained from a victim can be used to infiltrate other websites where the victim registered with the same email/username and password.
+This walkthrough will follow a fake Facebook profile, its suspicious links, and some problems that occur along the way. The analysis will trace the behaviors (the "campaign") which starts with a fake profile. 
+
+It will also explain how the entire process takes data from the victim. The final webpage asks for a username, email, and password. The UTM data, coupled with this information, can give an attacker the resources needed to infiltrate the victim's own Facebook account.
 
 By the end of this, you should have some idea of how to trace a fake profile. Note that you should *seldom* (if ever) need to do these steps on your own device. There are many "red flags" that signify a fake profile. Learn them and identify them.
 
