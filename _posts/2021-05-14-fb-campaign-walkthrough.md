@@ -245,13 +245,19 @@ Facebook.
 And, as noted, they knew that the victim used a Facebook link to get
 here. It was right there in the URL's UTM data earlier.
 
-At this point, the attacker assumes that the user wants the promise of
-sexual content enough to enter this information. This guide stops at
-this screen alone. 
-
-Presumably, the website might also ask for payment
+This guide stops at this screen alone. Presumably, the website might also ask for payment
 information. Payment information is not just another data point about
 the user. If this were an attack, payment information could be used simply to steal the victim's money.
+
+## What information did they get?
+
+By the end of the campaign, the victim leaked the following information to the attacker:
+
+- Their Facebook photos and posts (if they friended them)
+- The fact that they used a link that was posted to Facebook, and therefore likely has a Facebook account)
+- Evidence that a sex-driven campaign worked, and is likely to work in the near future with others
+- If they register, they willingly give up a username, email address, and password, all of which might be used to log in to other websites (including Facebook) tied to the same email or username, and possibly using the same password
+- Any number of unknown information obtained by the webpage's scripts, beacons, and other unwanted resources
 
 # Further evidence
 
@@ -293,6 +299,7 @@ first place:
 -   Never give your personal information, contact information, or
     payment information to an untrusted source. Even data that seems
     innocent can be used for an attacker to develop a profile about you.
+-   Use a content-blocker in your browser. Tools like UBlock Origin and NoScript are designed to mitigate your chances of falling victim to a cyberattack. Services like IVPN even block intrusive content (including known spam and malware domains) as a feature of the VPN itself.
 
 # Summary
 
