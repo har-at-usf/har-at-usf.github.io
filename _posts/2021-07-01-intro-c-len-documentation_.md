@@ -2,7 +2,6 @@
 layout: post
 title: Using a macro to get an array length in C
 date: 2021-07-01 15:57:00 -0400
-categories: c programming language macro array length beginner intermediate function pointer
 ---
 
 # Abstract
