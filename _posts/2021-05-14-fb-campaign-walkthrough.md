@@ -63,15 +63,17 @@ eventual target is dangerous; if this were malware (virus, Trojan, or
 phishing scam), a user would not be able to know that the target is
 malicious. They would only see, for example, a shortened link.
 
-**UTM Tags.** [UTM data](https://support.google.com/analytics/answer/1033863?hl=en) is
+**Malicious UTM campaign.** [UTM data](https://support.google.com/analytics/answer/1033863?hl=en) is
 used later to notify the attacker that the target website was visited
 through a Facebook link. This lets the attacker know that their Facebook
 campaign is working. In the future, they are more likely to use Facebook
 for other exploits.
 
 **Suspicious website.** The goal is to get a user to subscribe for a website, which has some very suspicious qualities. It has even been flagged on blacklists. The page attempts to get the victim's personal
-information. A full name and email address will allow the attacker to
-spam their inbox. In addition, nothing will stop the attacker from
+information. 
+
+**Password attack.** A full name and email address will allow the attacker to
+spam their inbox. If the website is suspicious *and malicious*, nothing will stop the attacker from
 giving away the victim's information to other organizations, websites,
 or even *real attackers.*
 
