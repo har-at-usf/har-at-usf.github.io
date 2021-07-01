@@ -4,15 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+I am a Cybersecurity Analyst and a Cybersecurity undergraduate (BSCyS) at USF. My career interests include security-oriented software engineering, Cyber Forensics, and Offensive Cybersecurity. This portfolio showcases some of my work in different classes. You will find a variety of case studies, conclusions, and thoughts for further research. The information noted here is intended for anyone to use. If any information here is used elsewhere (for example, a program or research paper), please provided proper citation and references to the page, article, author, etc.
