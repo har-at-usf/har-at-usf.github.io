@@ -117,13 +117,17 @@ Finally, the scale of knowledge expected when using such a macro is worth reemph
 # References:
 
 Discussion on macros and data types:
-	https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/
+	(https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/)
 
 C function overloading:
-	https://stackoverflow.com/a/25026358
+	(https://stackoverflow.com/a/25026358)
 
 Finding an array's length in C:
-	https://stackoverflow.com/a/37539
+	(https://stackoverflow.com/a/37539)
+
+Problems with pointers and `sizeof` in C:
+
+​	(https://stackoverflow.com/questions/492384/how-to-find-the-sizeof-a-pointer-pointing-to-an-array)
 
 Python's len() function:
-	https://www.w3schools.com/python/ref_func_len.asp
+	(https://www.w3schools.com/python/ref_func_len.asp)
