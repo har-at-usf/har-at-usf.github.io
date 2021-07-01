@@ -117,7 +117,17 @@ Finally, the scale of knowledge expected when using such a macro is worth reemph
 
 # References:
 
-[1]: <https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/>	"Discussion on macros and data types"
+<sup>1</sup>	[Discussion on macros and data types][1]
+
+<sup>2</sup>	[Finding an array's length in C][2]
+
+<sup>3</sup>	[Problems with pointers and `sizeof` in C][3]
+
+<sup>4</sup>	[Python's `len()` function][4]
+
+<!-- Links -->
+
+[1]: https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/	"Discussion on macros and data types"
 [2]: https://stackoverflow.com/a/37539	"Finding an array's length in C"
-[3]: https://stackoverflow.com/questions/492384/how-to-find-the-sizeof-a-pointer-pointing-to-an-array	"Problems with pointers and `sizeof` in C"
-[4]: https://www.w3schools.com/python/ref_func_len.asp	"Python's `len()` function"
+[3]: https://stackoverflow.com/questions/492384/how-to-find-the-sizeof-a-pointer-pointing-to-an-array	"Problems with pointers and sizeof in C"
+[4]: https://www.w3schools.com/python/ref_func_len.asp	"Python's len() function"
