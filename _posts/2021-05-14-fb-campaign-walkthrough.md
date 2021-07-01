@@ -5,30 +5,37 @@ date: 2021-05-14 19:08:00 -0400
 categories: utm social engineering media facebook 
 ---
 
-The phenomenon of "men who interact with fake, sexualized content" on the internet is very prevalent. Most people think of these "fake profiles" as "just spam." [However, the techniques used in spam are often used in cyberattacks as well](https://www.newsweek.com/hackers-use-fake-profiles-attractive-women-facebook-spread-viruses-814293). 
+# Abstract
 
-That means, as a rule of thumb, do *not* interact with a fake profile. And do *not click* their suspicious links. 
+Fake Facebook profiles are the attack vector for many cyberattacks. Fake profiles which use real photographs of real people without their permission create two victim groups: those who interact with the page, and those whose photos are exploited for malicious gains. This walkthrough will explain the problems that arise when a user follows suspicious links on Facebook. It starts with an overview of a suspicious Facebook page, the origin of the attack. The structure of the link, and the resultant links that follow, are detailed. A reflection on the amount of data that an attacker can obtain from a user are noted at the end, along with techniques for avoiding such an attack.
 
-And telling you what not to do might make you wonder: what happens if you *do* interact? If you *do* follow those links?
+# Background
 
-For your sake, this article will do everything I just said *not* to do.
+Facebook contains a number of fake profiles which use inappropriate content to get a user's attention. Often, Facebook refuses to flag these profiles as suspicious. However, [Facebook users are very much aware of this issue](https://www.prod.facebook.com/help/community/question/?id=2253812781507202), and has written several publications on how to identify, report, and ignore these pages (along with the "why" for doing so). Facebook has posted [some responses](https://www.facebook.com/help/community/question/?id=2153305988220906) to these concerns. The company's own security posture is left to the reader to determine.
 
-This walkthrough will follow a fake Facebook profile, its suspicious links, and some problems that occur along the way. The analysis will trace the behaviors (the "campaign") which starts with a fake profile. 
+There is also a dangerous element with these pages. Consider the following from a [Sophos article about this exact topic](https://nakedsecurity.sophos.com/2018/03/23/beware-the-fake-facebook-sirens-that-flirt-you-into-sextortion/):
 
-The following campaign uses a fake Facebook profile to get followers. It offers links, which
-can be traced back to Facebook, which lead users to a registration page. If
-a user fills out this page with real information, the attacker has
-several data points about the victim. They can use this information to infiltrate the victim's own Facebook account.
+> Fake Facebook profiles of hot women who invite targets to join them in sexy webcam masturbation sessions – sessions that lead to image capture and [extortion](https://nakedsecurity.sophos.com/?s=sextortion) – are part of a “three-tiered, industrial process” that allows a sophisticated criminal network to “find, filter and defraud victims, all the while protecting itself,” according to an investigation done by [Radio Canada.](http://ici.radio-canada.ca/special/sextorsion/en/index.html)
+>
+> We’ve covered plenty of lone-wolf sextortionists: one who targeted underaged girls until he was [caught by investigators’ booby-trapped video;](https://nakedsecurity.sophos.com/2017/08/09/sextortionist-caught-by-investigators-booby-trapped-video/) the guy who [preyed on Miss Teen USA and 150 others](https://nakedsecurity.sophos.com/2014/03/19/sextortionist-who-preyed-on-miss-teen-usa-and-150-others-sentenced-to-18-months/); and a [former US Embassy worker](https://nakedsecurity.sophos.com/2016/03/23/sextortionist-government-worker-gets-nearly-5-years-in-the-slammer/) who sextorted, phished, broke into email accounts, stole explicit images and cyberstalked hundreds of women around the world from his London office. And there are many [others.](https://nakedsecurity.sophos.com/?s=sextortion)
+>
+> Not to downplay the suffering caused by such operators in any way – there have been multiple [suicides](https://nakedsecurity.sophos.com/2014/05/07/87-arrested-in-the-philippines-in-bust-of-sextortion-ring/) related to such cases – but those lone wolves are rank amateurs compared with the massive network of fraudulent accounts that catfish male victims using stolen photos of young women and adolescent girls.
+>
+> To find out how the networks spin their webs, Radio Canada journalists Marie-Eve Tremblay and Jeff Yates – an expert in online disinformation who’s found and mapped the connections between fake profiles to learn how they support each other – conducted a months-long investigation into what he believes is a “massive network.”
+>
+> They knew that the accounts were fake because the photos had been stolen from Instagram accounts or personal Facebook profiles. Some of the fake accounts are massive: they have 100,000, 200,000, or even 500,000 followers...
 
-By the end of this, you should have some idea of how to trace a fake profile. Note that you should *seldom* (if ever) need to do these steps on your own device. There are many "red flags" that signify a fake profile. Learn them and identify them.
+This is a real problem with a human cost. The tactics, techniques, procedures, and motivations of such page maintainers should be scrutinized so long as these pages continue to appear on social media platforms. This can inflict serious injury on any victims: the ones who follow the pages, *and the ones whose content is either stolen or exploited.* This walkthrough extends the problem noted in the article by exploring the technical details involved with such pages as they relate to a potential cyberattack.
+
+*Note: The original content of these pages was not necessarily age-appropriate. Most of the image content is redacted. This is largely to protect the victims involved: the ones who liked the page under false pretenses, and the person featured on the page, whose photographs may be in use without her consent. Abstractions or snippets of the original content are used solely to explain the nature of common cyberattacks. Please be mature.* 
 
 # Setup
 
-My setup is a Virtual Machine running a lightweight, security-mindful
-distro. It is a throwaway environment and will be deleted after this
-demo.
+The testing setup is a Virtual Machine running a lightweight, security-mindful distro. It is a throwaway environment and will be deleted after this demo. 
 
 ![](/assets/2021-05-14/test-setup.PNG)
+
+This walkthrough is to illustrate some key concepts that cannot be meaningfully illustrated using an "app." The browser console gives everyone an advantage: the ability to analyze web content. Using these resources should encourage any user to remember that, behind the superficial experience offered by any app, there is an underlying structure of technical components that can be exploited under the right conditions.
 
 *Author's note: This guide shows the domain names for several websites.
 Please do not follow those directly. I cannot guarantee that they will
@@ -41,10 +48,10 @@ In short, the attacker wants the user to give up their own information. They wil
 # Techniques (how they do it)
 
 **Social engineering.** This fake profile campaign uses a variety of techniques to get user
-engagement. The most dominant technique used is "[social engineering](https://usa.kaspersky.com/resource-center/definitions/what-is-social-engineering)." In short, this is getting users to act against their own best interests. This campaign specifically uses the [promise of sex](https://www.bleepingcomputer.com/news/security/malware-spread-as-nude-extortion-pics-of-friends-girlfriend/) to gain a following of users (friends or followers) on Facebook. This following will become their pool of victims later on.
+engagement. The most dominant technique used is "[social engineering](https://usa.kaspersky.com/resource-center/definitions/what-is-social-engineering)." In short, this is getting users to act against their own best interests. This campaign specifically uses the [inappropriate material](https://www.bleepingcomputer.com/news/security/malware-spread-as-nude-extortion-pics-of-friends-girlfriend/) to gain a following of users (friends or followers) on Facebook. This following will become their pool of victims later on.
 
 **Data collection.** The attacker who manages the profile then encourages users to click
-links that arrive at a spam website (one that, again, promises sex).
+links that arrive at a suspicious website.
 Once there, users are prompted to provide personal information, like
 their name and email address. Presumably, it would also ask for payment
 information later on. (This walkthrough does not cover this because that
@@ -92,38 +99,22 @@ so:
 
 ## Fake profile
 
-Fake profiles show up in Facebook's "People you may know" feed all the
-time. This happens when a friend "likes" or "friend-requests" such a
-page. Consider this one:
+Fake profiles show up in Facebook's "People you may know" feed all the time. This happens when a friend "likes" or "friend-requests" such a page. Consider this one:
 
 ![](/assets/2021-05-14/dana-profile.PNG)
 
-Dana has *over one-thousand followers* (1,331 at the time of writing)
-and 2,022 friends. Most of her photographs violate Facebook's own
-position on content that includes nudity. However, she has been active
-since December of 2020. Her followers, it seems, absolutely love her.
+This user has *over one-thousand followers* (1,331 at the time of writing) and 2,022 friends. Most of her photographs violate Facebook's own position on content that includes nudity. However, she has been active since December of 2020. Her followers, it seems, absolutely love her.
 
-Sadly for them, Dana likely isn't the woman in the photograph.
+Of course, the person in these photographs may not be the woman in the photograph. The rest of this walkthrough will illustrate why it is challenging to make this distinction. On one hand, the person in the photographs could be posting this malicious content --- that is, could themselves be the attacker. However, the idea that any user would associate their real self with a malicious profile seems unlikely. 
 
-One unsettling aside: the same woman appears in each post. Often, fake
-profiles use only one photo, or they use a collection of different
-women.
+One takeaway to consider is this: if these images *do* belong to someone else, then all of the users on this page play a role in that person's exploitation by an adversary (or, in less technical jargon, a "jerk").
 
-![](/assets/2021-05-14/dana-likes.PNG)
+In short, the rest of this guide assumes that *someone* is behind the campaign. But, it calls into question whether or not it is the same person featured on this page. (It is the author's own belief that this page is fake, and that some model's photos are being used to drive this campaign, with or without her permission.)
 
-If this were a public persona (for example, a celebrity or a well-known
-pornographic actress), it might make sense why. A public person's photos
-are readily available. However, these photographs show up neither in a
-reverse-image Tineye or Google Image search. This means that the actress is either
-directly involved in the operation, or has no idea that her photographs
-have been compromised. 
+## Suspicious links to suspicious pages
 
-In any case, the big takeaway is that "no reverse-image results," and "multiple photos of the same person," does not necessarily mean a profile is authentic.
-
-## Malicious links
-
-Dana uses two different sets of links. She wants her followers to click
-either one. Both links lead to the same page.
+This page uses two different sets of links. The attacker wants their followers to click
+either one. Both links eventually arrive at the same page.
 
 The **v.ht** link is used in older posts. This service is a link
 shortener. This is a common tactic for an attacker to hide a malicious
@@ -144,9 +135,7 @@ property):
 
 ![](/assets/2021-05-14/dana-inspect-msto.PNG)
 
-In this case, both links match "what we see." Here's how to prove it.
-
-Using a URL decoder, we can observe that both links are actually valid.
+In this case, both links match "what we see." Using a URL decoder, we can observe that both links are actually valid.
 Facebook encodes the URL in order to use with its "external
 link-handling service." We can view the target URL using any URL
 decoder.
@@ -162,9 +151,10 @@ Likewise, the **msto.me** link:
 ![](/assets/2021-05-14/urldecode-msto.PNG)
 
 The problem is, of course, that the link itself might *lead* to a
-malicious page. On a normal setup, this is where I say, "DON'T CLICK THE
-LINK!" Since this guide is in a virtual machine, we can follow the link
-without too much fear about the main system suffering. 
+malicious page. On a normal setup, this is where a prudent user might say, "DON'T CLICK THE
+LINK!" Since this guide is in a virtual machine, we can *first log out of Facebook* (ie, clear your browser cache), and *then* follow the link, without too much fear about the main system suffering. 
+
+*Note: It is crucial **never to follow a suspicious link in the same browser instance where you are currently logged in**. A phishing campaign might use this principle to harvest data from the browser session.*
 
 At this point, copy and paste the URLs into a text editor (like
 notepad), log out of Facebook, and clear the browser's cache. This browser
@@ -173,7 +163,7 @@ window accomplishes the same task.)
 
 ## "Middle" pages
 
-Dana's URLs direct the victim to two different pages "between" Facebook and the target URL.
+The suspicious URLs on the Facebook page direct the victim to two different pages "between" Facebook and the eventual target page. Both of these pages "in the middle" are discussed.
 
 The **v.ht** page immediately tries to load the target, **giveladieslove.com**. It does so
 automatically, even with scripts enabled, and shows only a "loading"
@@ -193,16 +183,16 @@ buttons for direct contact with the (fake) user:
 
 ![](/assets/2021-05-14/msto-landingpage.PNG)
 
-Both buttons' URLS redirect to an external page, **giveladieslove.com**. They are not links to pages
-within the **msto.me** website. We can inspect them for more detail:
+Both buttons' URLS redirect to the target page, **giveladieslove.com**. They are not links to pages
+within the **msto.me** website. This runs contrary to what the MSTO buttons would lead us to believe. We can inspect them for more detail:
 
 ![](/assets/2021-05-14/msto-links-analyzed.PNG)
 
-To recap, Dana's profile provides two different links. They both lead to different pages. However, both those pages lead to the same page, **giveladieslove.com**.
+To recap, the Facebook profile provides two different links. They both lead to different pages. However, both those pages lead to the same page, **giveladieslove.com**.
 
 ## UTM Campaign
 
-Either URL from Dana's website directs to a page called **giveladieslove.com**. In order to keep this appropriate for all audiences, the full webpage will not be displayed. Instead, we will analyze some behaviors.
+Either of the two "middle pages" direct to a page called **giveladieslove.com**. In order to keep this appropriate for all audiences, the full webpage will not be displayed. Instead, this section will analyze some details regarding the URL.
 
 First, the URL with scripts disabled reveals some information:
 specifically, that we arrived on this site through the Facebook campaign
@@ -220,9 +210,8 @@ away:
 
 However, nothing is stopping an attacker from storing that UTM information for use later. In the next section, we will observe how this is useful for targeting a clear, deliberate attack against the victim.
 
-The **giveladieslove.com** landing page asks a series of questions, all of which are designed to
-entice a victim through the promise of sexual activities. (Recall that
-this is exactly how Dana gained her followers.)
+The **giveladieslove.com** landing page asks a series of lewd questions. (Recall that
+this is exactly how the Facebook page gained their followers.) The author of this guide invites the reader to laugh at the exaggeration of the content displayed.
 
 ![](/assets/2021-05-14/giveladieslove-initquestion.PNG)
 
@@ -232,7 +221,7 @@ After all questions are clicked, a *final* page loads: **date4you.net**.
 
 The final page, **date4you.net**, is also very graphic, and it will not
 be shown. This stage of the campaign is really the whole goal of the
-campaign. Again, the goal is for the attacker to get your information.
+campaign. To reiterate, the goal is for the attacker to get your information.
 
 A form asks for a username, password, and email address in order to
 "register" for the website:
@@ -313,6 +302,6 @@ It is not clear whether the final website is written with malicious intent, or i
 
 One could also explore Facebook's own trustworthiness as a platform. In the past decade, it has been a hotbed of lawsuits and critiques regarding its willingness to reveal user data, and its relaxed security posture with regards to leaking user data. Some would argue that Facebook itself is a scam site...
 
-And, with that in mind, at the time of writing, Facebook does not believe Dana violates any Terms of Service. 
+And, with that in mind, at the time of writing, Facebook does not believe that the page in question (the one we traced and found evidence of deceptive or fraudulent practices) violates any Terms of Service. The reader is thus invited to consider what this says about Facebook's own security posture, and how their views may one day affect them or the people whom they love.
 
 ![](/assets/2021-05-14/update-shes-ok.PNG)
