@@ -2,11 +2,12 @@
 layout: post
 title: Using a macro to get an array length in C
 date: 2021-07-01 15:57:00 -0400
+
 ---
 
 # Abstract
 
-This post explores why a function-like macro is an acceptable approach for getting an array's length in a beginner- or intermediate-level C programming course. Most modern programming languages use some kind of overarching, type-agnostic solution to get the number of elements in an array (Python's `len()` function or Java's `length` method, to name some examples). C does not offer such a function. To complicate matters, C's `sizeof` operator only returns the *byte size* of its argument, not the number of elements in an array. One can use basic division to get the number of elements in the array: by dividing an array's byte size by the byte size of any element in that array. Writing this math as a macro provides a data-type-agnostic solution for an array of any native data type. It also avoids issues that arise while trying to implement the same logic within a function. While there are likely better solutions, this solution should be acceptable for a beginner-level C programming class, where restrictions are strong. Typically, any "Intro to C" course will cover macros and functions. It is no great stretch of logic to combine the two concepts in order to determine this solution. The macro definition and its usage is given in the [next section](#len(array)-as-a-macro).
+This post explores why a function-like macro is an acceptable approach for getting an array's length in a beginner- or intermediate-level C programming course. Most modern programming languages use some kind of overarching, type-agnostic solution to get the number of elements in an array ([Python's `len()` function][4] or Java's `length` method, to name some examples). C does not offer such a function. To complicate matters, C's `sizeof` operator only returns the *byte size* of its argument, not the number of elements in an array. One can use basic division to get the number of elements in the array: by dividing an array's byte size by the byte size of any element in that array. Writing this math as a macro provides a data-type-agnostic solution for an array of any native data type. It also avoids issues that arise while trying to implement the same logic within a function. While there are likely better solutions, this solution should be acceptable for a beginner-level C programming class, where restrictions are strong. Typically, any "Intro to C" course will cover macros and functions. It is no great stretch of logic to combine the two concepts in order to determine this solution. The macro definition and its usage is given in the [next section](#len(array)-as-a-macro).
 
 # LEN(array) as a macro
 
@@ -116,18 +117,7 @@ Finally, the scale of knowledge expected when using such a macro is worth reemph
 
 # References:
 
-Discussion on macros and data types:
-	(https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/)
-
-C function overloading:
-	(https://stackoverflow.com/a/25026358)
-
-Finding an array's length in C:
-	(https://stackoverflow.com/a/37539)
-
-Problems with pointers and `sizeof` in C:
-
-​	(https://stackoverflow.com/questions/492384/how-to-find-the-sizeof-a-pointer-pointing-to-an-array)
-
-Python's len() function:
-	(https://www.w3schools.com/python/ref_func_len.asp)
+[1]: https://www.geeksforgeeks.org/interesting-facts-preprocessors-c/	"Discussion on macros and data types"
+[2]: https://stackoverflow.com/a/37539	"Finding an array's length in C"
+[3]: https://stackoverflow.com/questions/492384/how-to-find-the-sizeof-a-pointer-pointing-to-an-array	"Problems with pointers and `sizeof` in C"
+[4]: https://www.w3schools.com/python/ref_func_len.asp	"Python's `len()` function"
